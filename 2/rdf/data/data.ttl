@@ -86,7 +86,7 @@ member:jane a foaf:Person;
             foaf:givenName "Jane"@en;
             dcat:contactPoint ex:contact_point_2.
 
-member:geroge a foaf:Person;
+member:george a foaf:Person;
               dcterms:identifier 514986;
               foaf:givenName "George"@en;
               dcat:contactPoint ex:contact_point_4.

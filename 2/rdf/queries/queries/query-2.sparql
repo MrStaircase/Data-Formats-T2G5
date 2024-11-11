@@ -1,22 +1,20 @@
 #Retrieve all library employees along with their contact points.
 
 PREFIX ex: <http://example.org/library>
+PREFIX schema: <http://schema.org/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
-PREFIX emp: <http://example.org/emp#>
-PREFIX nlon: <http://example.org/nlon#>
-PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dt: <http://example.org/dt#>
+PREFIX cdesc: <http://example.org/cdesc#>
 
-SELECT ?author_name ?book_name ?library_name
+SELECT ?authorName
 WHERE {
-    ?author a dt:Author;
-            foaf:name ?author_name.
+  	?author a dt:Author;
+  			foaf:givenName ?authorName.
     ?book a schema:Book;
-          dcterms:title ?book_name;
-          schema:creator ?author.
+            schema:creator ?author.
     ?library a schema:Library;
-            foaf:name ?library_name;
+            foaf:name ?libraryName;
             cdesc:hasInventory ?book.
 }
-GROUP BY ?author
+GROUP BY ?authorName
 HAVING(COUNT(?library) > 1)

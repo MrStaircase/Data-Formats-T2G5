@@ -1,15 +1,21 @@
-#Retrieve all the members of the library along with the books they have access to.
+#List members along with the book they could get and the library at which that book is
 
 PREFIX ex: <http://example.org/library>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX schema: <http://schema.org/>
 PREFIX member: <http://example.org/member#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX cdesc: <http://example.org/cdesc#>
 
-SELECT ?member ?memberName ?book ?bookTitle
+SELECT ?memberName ?bookTitle ?libraryName
 WHERE {
     ?member a foaf:Person ;
         foaf:givenName ?memberName .
     ?book a schema:Book ;
         dcterms:title ?bookTitle .
+  	?library a schema:Library ;
+        foaf:name ?libraryName;
+        cdesc:hasInventory ?book;
+        schema:member ?member.
 }
+ORDER BY ?memberName ?bookTitle ?libraryName

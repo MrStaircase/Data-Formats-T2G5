@@ -1,4 +1,4 @@
-#Retrieve all library employees along with their contact points.
+#List the names of authors that have books in more than one library
 
 PREFIX ex: <http://example.org/library>
 PREFIX schema: <http://schema.org/>

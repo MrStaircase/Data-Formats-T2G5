@@ -1,17 +1,28 @@
-#Retrieve all books that have been written by a perticular author using his author id.
+#Lists all librarians who have access to the contact points of the authers of the book of the library they work in
 
-PREFIX ex: <http://example.org/library>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX nlon: <http://example.org/nlon#>
+PREFIX ptop: <http://example.org/ptop#>
 PREFIX schema: <http://schema.org/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX author: <http://example.org/author#>
+PREFIX dt: <http://example.org/dt#>
+PREFIX cdesc: <http://example.org/cdesc#>
 
-SELECT ?book ?title ?isbn
+SELECT ?librarianName ?title ?contactInfo
 WHERE {
+  ?library a schema:Library ;
+  		ptop:hasEmployee ?librarian ;
+    	cdesc:hasInventory ?book.
+  
+  ?librarian a nlon:Librarian ;
+     foaf:givenName ?librarianName.
+  
   ?book a schema:Book ;
-        schema:creator ?author ;
-        dcterms:title ?title ;
-        schema:ISBN ?isbn .
-  ?author a dt:Author;
-        foaf:givenName "John".
+     dcterms:title ?title ;
+     schema:creator ?author.
+  
+  ?author a dt:Author ;
+     dcat:contactPoint ?contactInfo.
+  
 }

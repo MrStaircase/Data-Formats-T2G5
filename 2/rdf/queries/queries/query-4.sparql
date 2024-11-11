@@ -1,0 +1,14 @@
+#Retrieve all libraries which have more than one book in their inventory
+
+PREFIX ex: <http://example.org/library>
+PREFIX schema: <http://schema.org/>
+PREFIX cdesc: <http://example.org/cdesc#>
+
+SELECT ?library (COUNT(?book) AS ?numBooks)
+WHERE {
+    ?library a schema:Library ;
+        cdesc:hasInventory ?book .
+    ?book a schema:Book .
+}
+GROUP BY ?library
+HAVING (COUNT(?book) > 1)

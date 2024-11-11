@@ -1,0 +1,3 @@
+// This query retrieves all books held by "City Library"
+MATCH (library:Library {name: "City Library"})-[:HOLDS]->(book:Book)
+RETURN book.title AS BookTitle, book.ISBN AS ISBN

@@ -1,0 +1,15 @@
+#Retrieve all library employees along with their contact points.
+
+PREFIX ex: <http://example.org/library>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX emp: <http://example.org/emp#>
+PREFIX nlon: <http://example.org/nlon#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+
+SELECT ?employee ?name ?contactPoint
+WHERE {
+    ?employee a nlon:Librarian ;
+        foaf:givenName ?name;
+        dcat:contactPoint ?contactPoint .
+}

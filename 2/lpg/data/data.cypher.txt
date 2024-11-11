@@ -1,0 +1,23 @@
+// Node creation
+CREATE (:Library {name: "City Library", address: "Italska 70"});
+CREATE (:Librarian {name: "Natalie", employeeID: 165});
+CREATE (:Book {title: "Forth Wing", ISBN: "147258", publishYear: 2022, bookID: 65});
+CREATE (:Author {name: "Dwayne", authorID: 8456});
+CREATE (:Member {name: "George", memberID: 514986});
+CREATE (:ContactInformation {phoneNumber: "123456789", email: "abc@def.com"});
+
+// Relationship creation
+MATCH (library:Library {name: "City Library"}), (librarian:Librarian {name: "Natalie"})
+CREATE (library)-[:MANAGED_BY]->(librarian);
+
+MATCH (library:Library {name: "City Library"}), (book:Book {title: "Forth Wing"})
+CREATE (library)-[:HOLDS]->(book);
+
+MATCH (book:Book {title: "Forth Wing"}), (author:Author {name: "Dwayne"})
+CREATE (book)-[:WRITTEN_BY]->(author);
+
+MATCH (library:Library {name: "City Library"}), (member:Member {name: "George"})
+CREATE (library)-[:HAS_MEMBER]->(member);
+
+MATCH (author:Author {name: "Dwayne"}), (contact:ContactInformation {phoneNumber: "123456789"})
+CREATE (author)-[:HAS_CONTACT_INFORMATION]->(contact);

@@ -1,0 +1,17 @@
+#Retrieve all books that have been written by a perticular author using his author id.
+
+PREFIX ex: <http://example.org/library>
+PREFIX schema: <http://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX author: <http://example.org/author#>
+
+SELECT ?book ?title ?isbn
+WHERE {
+  ?book a schema:Book ;
+        schema:creator ?author ;
+        dcterms:title ?title ;
+        schema:ISBN ?isbn .
+  ?author a dt:Author;
+        foaf:givenName "John".
+}

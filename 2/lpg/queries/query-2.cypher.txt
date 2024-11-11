@@ -1,0 +1,3 @@
+// This query lists all members associated with "Community Library"
+MATCH (library:Library {name: "Community Library"})-[:HAS_MEMBER]->(member:Member)
+RETURN member.name AS MemberName, member.memberID AS MemberID

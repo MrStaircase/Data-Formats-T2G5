@@ -1,0 +1,3 @@
+// This query retrieves the contact information for librarian "Natalie"
+MATCH (librarian:Librarian {name: "Natalie"})-[:HAS_CONTACT_INFORMATION]->(contact:ContactInformation)
+RETURN contact.phoneNumber AS PhoneNumber, contact.email AS Email

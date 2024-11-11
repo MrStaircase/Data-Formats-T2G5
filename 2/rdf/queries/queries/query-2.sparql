@@ -7,9 +7,16 @@ PREFIX emp: <http://example.org/emp#>
 PREFIX nlon: <http://example.org/nlon#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
-SELECT ?employee ?name ?contactPoint
+SELECT ?author_name ?book_name ?library_name
 WHERE {
-    ?employee a nlon:Librarian ;
-        foaf:givenName ?name;
-        dcat:contactPoint ?contactPoint .
+    ?author a dt:Author;
+            foaf:name ?author_name.
+    ?book a schema:Book;
+          dcterms:title ?book_name;
+          schema:creator ?author.
+    ?library a schema:Library;
+            foaf:name ?library_name;
+            cdesc:hasInventory ?book.
 }
+GROUP BY ?author
+HAVING(COUNT(?library) > 1)

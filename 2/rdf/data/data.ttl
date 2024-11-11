@@ -17,21 +17,21 @@
 ex:city_library a schema:Library;
                 foaf:name "City Library"@en;
                 vcard:hasAddress "Italska 70"@cz;
-                ptop:hasEmloyee emp:165;
+                ptop:hasEmployee emp:165;
                 cdesc:hasInventory ex:forth_wing;
                 schema:member member:george.
 
 ex:central_library a schema:Library;
                    foaf:name "Central Library"@en;
                    vcard:hasAddress "Main Street 123"@en;
-                   ptop:hasEmloyee emp:167;
+                   ptop:hasEmployee emp:167;
                    cdesc:hasInventory ex:east_of_eden;
                    schema:member member:jane.
 
 ex:eastern_library a schema:Library;
                    foaf:name "Eastern Library"@en;
                    vcard:hasAddress "East Street 321"@en;
-                   ptop:hasEmloyee emp:169;
+                   ptop:hasEmployee emp:169;
                    cdesc:hasInventory ex:forth_wing;
                    cdesc:hasInventory ex:east_of_eden;
                    cdesc:hasInventory ex:hard_to_be_a_god;

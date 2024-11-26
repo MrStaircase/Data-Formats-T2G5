@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id" : "https://example.com/library.schema.json",
+    "title": "JSON schema",
+    "description": "A JSON schema representing the library hierarchy",
+    "type" : "object",
+    "properties": {
+        "Library" : {
+
+        }
+    },
+    "definitions": {
+        "Librarian" : {
+            "type" : "object",
+            "properties": {
+                "employee_id" : {"type" : "integer"},
+                "name" : {"type" : "string"}
+            },
+            "required": [
+                "employee_id",
+                "name"
+            ]
+        },
+        "Book" : {
+            "type" : "object",
+            "properties": {
+                "book_id" : {"type" : "integer"},
+                "ISBN" : {"type" : "string"},
+                "title" : {"type" : "string"},
+                "publish_year" : {"type" : "string", "format": "date"},
+                "copies_available" : {
+                    "type" : "array",
+                    "items" : {"type" : "integer", "minimum": 0}
+                }
+            },
+            "required": [
+                "book_id",
+                "ISBN",
+                "title",
+                "publish_year"
+            ]
+        },
+        "Member" : {
+            "type" : "object",
+            "properties": {
+                "member_id" : {"type" : "integer"},
+                "name" : {"type" : "string"}
+            },
+            "required": [
+                "member_id",
+                "name"
+            ]
+        },
+        "Author" : {
+            "type" : "object",
+            "properties": {
+                "author_id" : {"type" : "integer"},
+                "name" : {"type" : "string"}
+            },
+            "required": [
+                "author_id",
+                "name"
+            ]
+        },
+        "ContactInformation" : {
+            "type" : "object",
+            "properties": {
+                "phone_number" : {"type" : "integer"},
+                "email" : {"type" : "string", "format": "email"},
+                "delivery_address" : {"type" : ["string", "null"]}
+            },
+            "required": [
+                "phone_number",
+                "email"
+            ]
+        }
+    }
+    
+}

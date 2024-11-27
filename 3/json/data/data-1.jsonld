@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "dc11": "http://purl.org/dc/elements/1.1/",
+    "ex": "http://example.org/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ex:contains": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "http://example.org/Library/Central_Library",
+      "@type": "ex:Library",
+      "name": "Central Library",
+      "address": "Main Street 123",
+      "librarians" : [{
+        "@id" : "http://example.org/Librarian/Jhon",
+        "@type" : "ex:Librarian",
+        "employee_id" : 167,
+        "name" : "Jhon",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Jhon",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654322,
+          "email" : "john.doe@library.com"
+        }
+      }],
+      "books" : [{
+        "@id" : "http://example.org/Book/East_of_Eden",
+        "@type" : "ex:Book",
+        "book_id" : 66,
+        "ISBN" : "147259",
+        "title" : "East of Eden",
+        "publish_year" : 1952,
+        "authors" : [{
+          "@id" : "http://example.org/Author/Jhon",
+          "@type" : "ex:Author",
+          "author_id" : 8457,
+          "name" : "John",
+          "contactInformation" : {
+          	"@id" : "http://example.org/contactInformation/Jhon_2",
+          	"@type" : "ex:ContactInfo",
+          	"phone_number" : 987654324,
+          	"email" : "john_2.doe@library.com",
+            "delivery_address" : "777 Brockton Avenue, Abington MA 2351"
+       	  }
+        }]
+      }],
+      "members" : [{
+        "@id" : "http://example.org/Member/Jhon",
+        "@type" : "ex:Member",
+        "member_id" : 514987,
+        "name" : "Jane",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Jane",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654321,
+          "email" : "jane.doe@library.com"
+        }
+      }]
+    },
+    {
+      "@id": "http://example.org/library/Eastern_Library",
+      "@type": "ex:Library",
+      "name": "Eastern Library",
+      "address": "East Street 321",
+      "librarians" : [{
+        "@id" : "http://example.org/Librarian/Jhon",
+        "@type" : "ex:Librarian",
+        "employee_id" : 167,
+        "name" : "Jhon",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Jhon",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654322,
+          "email" : "john.doe@library.com"
+        }
+      }],
+      "books" : [{
+        "@id" : "http://example.org/Book/East_of_Eden",
+        "@type" : "ex:Book",
+        "book_id" : 66,
+        "ISBN" : "147259",
+        "title" : "East of Eden",
+        "publish_year" : 1952,
+        "authors" : [{
+          "@id" : "http://example.org/Author/Jhon",
+          "@type" : "ex:Author",
+          "author_id" : 8457,
+          "name" : "John",
+          "contactInformation" : {
+          	"@id" : "http://example.org/contactInformation/Jhon_2",
+          	"@type" : "ex:ContactInfo",
+          	"phone_number" : 987654324,
+          	"email" : "john_2.doe@library.com",
+            "delivery_address" : "777 Brockton Avenue, Abington MA 2351"
+       	  }
+        }]
+      }],
+      "members" : [{
+        "@id" : "http://example.org/Member/Jhon",
+        "@type" : "ex:Member",
+        "member_id" : 514987,
+        "name" : "Jane",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Jane",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654321,
+          "email" : "jane.doe@library.com"
+        }
+      }]
+    },
+    {
+      "@id": "http://example.org/library/City_Library",
+      "@type": "ex:Library",
+      "name": "City Library",
+      "address": "Italska 70"
+    }
+  ]
+}

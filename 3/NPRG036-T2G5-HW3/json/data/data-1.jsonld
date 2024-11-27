@@ -47,7 +47,7 @@
         }]
       }],
       "members" : [{
-        "@id" : "http://example.org/Member/Jhon",
+        "@id" : "http://example.org/Member/Jane",
         "@type" : "ex:Member",
         "member_id" : 514987,
         "name" : "Jane",
@@ -65,15 +65,16 @@
       "name": "Eastern Library",
       "address": "East Street 321",
       "librarians" : [{
-        "@id" : "http://example.org/Librarian/Jhon",
+        "@id" : "http://example.org/Librarian/Ben",
         "@type" : "ex:Librarian",
-        "employee_id" : 167,
-        "name" : "Jhon",
+        "employee_id" : 169,
+        "name" : "Ben",
         "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/Jhon",
+          "@id" : "http://example.org/contactInformation/Ben",
           "@type" : "ex:ContactInfo",
-          "phone_number" : 987654322,
-          "email" : "john.doe@library.com"
+          "phone_number" : 987654326,
+          "email" : "ben.doe@library.com",
+          "delivery_address" : "250 Hartford Avenue, Bellingham MA 2019"
         }
       }],
       "books" : [{
@@ -96,9 +97,63 @@
             "delivery_address" : "777 Brockton Avenue, Abington MA 2351"
        	  }
         }]
+      },{
+        "@id" : "http://example.org/Book/Hard_to_Be_a_God",
+        "@type" : "ex:Book",
+        "book_id" : 64,
+        "ISBN" : "147257",
+        "title" : "Hard to Be a God",
+        "publish_year" : 1964,
+        "copies_available" : [10, 11, 12],
+        "authors" : [{
+          "@id" : "http://example.org/Author/Boris",
+          "@type" : "ex:Author",
+          "author_id" : 8455,
+          "name" : "Boris",
+          "contactInformation" : {
+          	"@id" : "http://example.org/contactInformation/Boris",
+          	"@type" : "ex:ContactInfo",
+          	"phone_number" : 987654328,
+          	"email" : "boris.doe@library.com",
+            "delivery_address" : "591 Memorial Dr, Chicopee MA 1020"
+       	  }
+        }]
+      },{
+        "@id" : "http://example.org/Book/Forth_Wing",
+        "@type" : "ex:Book",
+        "book_id" : 65,
+        "ISBN" : "147258",
+        "title" : "Forth Wing",
+        "publish_year" : 2022,
+        "copies_available" : [1],
+        "authors" : [{
+          "@id" : "http://example.org/Author/Dwayne",
+          "@type" : "ex:Author",
+          "author_id" : 8456,
+          "name" : "Dwayne",
+          "contactInformation" : {
+          	"@id" : "http://example.org/contactInformation/Dwayne",
+          	"@type" : "ex:ContactInfo",
+          	"phone_number" : 987654325,
+          	"email" : "dwayne.doe@library.com",
+            "delivery_address" : "30 Memorial Drive, Avon MA 2322"
+       	  }
+        }]
       }],
       "members" : [{
-        "@id" : "http://example.org/Member/Jhon",
+        "@id" : "http://example.org/Member/Michael",
+        "@type" : "ex:Member",
+        "member_id" : 514988,
+        "name" : "Michael",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Michael",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654327,
+          "email" : "michael.doe@library.com",
+          "delivery_address" : "700 Oak Street, Brockton MA 2301"
+        }
+      },{
+        "@id" : "http://example.org/Member/Jane",
         "@type" : "ex:Member",
         "member_id" : 514987,
         "name" : "Jane",
@@ -114,7 +169,53 @@
       "@id": "http://example.org/library/City_Library",
       "@type": "ex:Library",
       "name": "City Library",
-      "address": "Italska 70"
+      "address": "Italska 70",
+      "librarians" : [{
+        "@id" : "http://example.org/Librarian/Natalie",
+        "@type" : "ex:Librarian",
+        "employee_id" : 165,
+        "name" : "Natalie",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/Natalie",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 123456789,
+          "email" : "natalie@def.com"
+        }
+      }],
+      "books" : [{
+        "@id" : "http://example.org/Book/Forth_Wing",
+        "@type" : "ex:Book",
+        "book_id" : 65,
+        "ISBN" : "147258",
+        "title" : "Forth Wing",
+        "publish_year" : 2022,
+        "copies_available" : [1],
+        "authors" : [{
+          "@id" : "http://example.org/Author/Dwayne",
+          "@type" : "ex:Author",
+          "author_id" : 8456,
+          "name" : "Dwayne",
+          "contactInformation" : {
+          	"@id" : "http://example.org/contactInformation/Dwayne",
+          	"@type" : "ex:ContactInfo",
+          	"phone_number" : 987654325,
+          	"email" : "dwayne.doe@library.com",
+            "delivery_address" : "30 Memorial Drive, Avon MA 2322"
+       	  }
+        }]
+      }],
+      "members" : [{
+        "@id" : "http://example.org/Member/George",
+        "@type" : "ex:Member",
+        "member_id" : 514986,
+        "name" : "George",
+        "contactInformation" : {
+          "@id" : "http://example.org/contactInformation/George",
+          "@type" : "ex:ContactInfo",
+          "phone_number" : 987654323,
+          "email" : "george.doe@library.com"
+        }
+      }]
     }
   ]
 }

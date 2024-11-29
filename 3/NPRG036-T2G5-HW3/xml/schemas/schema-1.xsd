@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Root Element -->
+  <xs:element name="LibrarySystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Libraries" type="LibrariesType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Library Definition -->
+  <xs:complexType name="LibrariesType">
+    <xs:sequence>
+      <xs:element name="Library" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="Address" type="xs:string" />
+            <xs:element name="Books" type="BooksType" />
+            <xs:element name="Librarians" type="LibrariansType" />
+            <xs:element name="Members" type="MembersType" />
+            <xs:element name="ContactInformation" type="ContactInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Books Definition -->
+  <xs:complexType name="BooksType">
+    <xs:sequence>
+      <xs:element name="Book" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="BookID" type="xs:integer" />
+            <xs:element name="ISBN" type="xs:string" />
+            <xs:element name="Title" type="xs:string" />
+            <xs:element name="PublishYear" type="xs:integer" />
+            <xs:element name="CopiesAvailable" type="xs:integer" minOccurs="0" />
+            <xs:element name="Author" type="AuthorType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Librarians Definition -->
+  <xs:complexType name="LibrariansType">
+    <xs:sequence>
+      <xs:element name="Librarian" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EmployeeID" type="xs:integer" />
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="ContactInformation" type="ContactInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Members Definition -->
+  <xs:complexType name="MembersType">
+    <xs:sequence>
+      <xs:element name="Member" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MemberID" type="xs:integer" />
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="ContactInformation" type="ContactInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Authors Definition -->
+  <xs:complexType name="AuthorType">
+    <xs:sequence>
+      <xs:element name="AuthorID" type="xs:integer" />
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="ContactInformation" type="ContactInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Contact Information Definition -->
+  <xs:complexType name="ContactInfoType">
+    <xs:sequence>
+      <xs:element name="PhoneNumber" type="xs:string" />
+      <xs:element name="Email" type="xs:string" />
+      <xs:element name="DeliveryAddress" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

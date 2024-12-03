@@ -1,61 +1,70 @@
 {
   "@context": {
-    "dc11": "http://purl.org/dc/elements/1.1/",
-    "ex": "http://example.org/vocab#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "ex:contains": {
-      "@type": "@id"
-    }
+    "ex": "http://example.org/library" ,
+    "schema": "http://schema.org/" ,
+    "foaf": "http://xmlns.com/foaf/0.1/" ,
+    "vcard": "http://www.w3.org/2006/vcard/ns#" ,
+    "ptop": "http://example.org/ptop#" ,
+    "cdesc": "http://example.org/cdesc#" ,
+    "emp": "http://example.org/emp#" ,
+    "nlon": "http://example.org/nlon#" ,
+    "dcterms": "http://purl.org/dc/terms/" ,
+    "dcat": "http://www.w3.org/ns/dcat#" ,
+    "member": "http://example.org/member#" ,
+    "author": "http://example.org/author#" ,
+    "dt": "http://example.org/dt#" ,
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#" ,
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
   },
   "@graph": [
     {
       "@id": "http://example.org/Library/Central_Library",
       "@type": "ex:Library",
-      "name": "Central Library",
-      "address": "Main Street 123",
-      "librarians" : [{
+      "foaf:name": "Central Library",
+      "vcard:address": "Main Street 123",
+      "ptop:librarians" : [{
         "@id" : "http://example.org/Librarian/Jhon",
-        "@type" : "ex:Librarian",
-        "employee_id" : 167,
-        "name" : "Jhon",
-        "contactInformation" : {
+        "@type" : "nlon:Librarian",
+        "dcterms:employee_id" : 167,
+        "foaf:name" : "Jhon",
+        "dcat:contactInformation" : {
           "@id" : "http://example.org/contactInformation/Jhon",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654322,
-          "email" : "john.doe@library.com"
+          "@type" : "vcard:ContactInfo",
+          "vcard:phone_number" : 987654322,
+          "vcard:email" : "john.doe@library.com"
         }
       }],
-      "books" : [{
+      "cdesc:books" : [{
         "@id" : "http://example.org/Book/East_of_Eden",
-        "@type" : "ex:Book",
-        "book_id" : 66,
-        "ISBN" : "147259",
-        "title" : "East of Eden",
-        "publish_year" : 1952,
-        "authors" : [{
+        "@type" : "schema:Book",
+        "dcterms:book_id" : 66,
+        "schema:ISBN" : "147259",
+        "dcterms:title" : "East of Eden",
+        "schema:publish_year" : 1952,
+        "schema:authors" : [{
           "@id" : "http://example.org/Author/Jhon",
-          "@type" : "ex:Author",
-          "author_id" : 8457,
-          "name" : "John",
-          "contactInformation" : {
+          "@type" : "dt:Author",
+          "dcterms:author_id" : 8457,
+          "foaf:name" : "John",
+          "dcat:contactInformation" : {
           	"@id" : "http://example.org/contactInformation/Jhon_2",
-          	"@type" : "ex:ContactInfo",
-          	"phone_number" : 987654324,
-          	"email" : "john_2.doe@library.com",
-            "delivery_address" : "777 Brockton Avenue, Abington MA 2351"
+          	"@type" : "vcard:ContactInfo",
+          	"vcard:phone_number" : 987654324,
+          	"vcard:email" : "john_2.doe@library.com",
+            "vcard:delivery_address" : "777 Brockton Avenue, Abington MA 2351"
        	  }
         }]
       }],
-      "members" : [{
+      "schema:members" : [{
         "@id" : "http://example.org/Member/Jane",
-        "@type" : "ex:Member",
-        "member_id" : 514987,
-        "name" : "Jane",
-        "contactInformation" : {
+        "@type" : "foaf:Member",
+        "dcterms:member_id" : 514987,
+        "foaf:name" : "Jane",
+        "dcat:contactInformation" : {
           "@id" : "http://example.org/contactInformation/Jane",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654321,
-          "email" : "jane.doe@library.com"
+          "@type" : "vcard:ContactInfo",
+          "vcard:phone_number" : 987654321,
+          "vcard:email" : "jane.doe@library.com"
         }
       }]
     },

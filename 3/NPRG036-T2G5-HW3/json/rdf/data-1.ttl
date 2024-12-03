@@ -1,0 +1,153 @@
+PREFIX schema: <http://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX ptop: <http://example.org/ptop#>
+PREFIX cdesc: <http://example.org/cdesc#>
+PREFIX emp: <http://example.org/emp#>
+PREFIX nlon: <http://example.org/nlon#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX member: <http://example.org/member#>
+PREFIX author: <http://example.org/author#>
+PREFIX dt: <http://example.org/dt#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+<ex:central_library>  rdf:type  schema:Library;
+        cdesc:hasInventory  <ex:east_of_eden>;
+        ptop:hasEmployee    emp:167;
+        schema:member       member:jane;
+        vcard:hasAddress    "Main Street 123";
+        foaf:name           "Central Library" .
+
+<ex:city_library>  rdf:type  schema:Library;
+        cdesc:hasInventory  <ex:forth_wing>;
+        ptop:hasEmployee    emp:165;
+        schema:member       member:george;
+        vcard:hasAddress    "Italska 70";
+        foaf:name           "City Library" .
+
+<ex:contact_point_1>  rdf:type  vcard:Kind;
+        vcard:hasEmail      "natalie@def.com";
+        vcard:hasTelephone  123456789 .
+
+<ex:contact_point_2>  rdf:type  vcard:Kind;
+        vcard:hasEmail      "jane.doe@library.com";
+        vcard:hasTelephone  987654321 .
+
+<ex:contact_point_3>  rdf:type  vcard:Kind;
+        vcard:email         "john.doe@library.com";
+        vcard:phone_number  987654322 .
+
+<ex:contact_point_4>  rdf:type  vcard:Kind;
+        vcard:hasEmail      "george.doe@library.com";
+        vcard:hasTelephone  987654323 .
+
+<ex:contact_point_5>  rdf:type  vcard:ContactInfo;
+        rdf:type            vcard:Kind;
+        vcard:hasAddress    "777 Brockton Avenue, Abington MA 2351";
+        vcard:hasEmail      "john_2.doe@library.com";
+        vcard:hasTelephone  987654324 .
+
+<ex:contact_point_6>  rdf:type  vcard:Kind;
+        vcard:hasAddress    "30 Memorial Drive, Avon MA 2322";
+        vcard:hasEmail      "dwayne.doe@library.com";
+        vcard:hasTelephone  987654325 .
+
+<ex:contact_point_7>  rdf:type  vcard:Kind;
+        vcard:hasAddress    "250 Hartford Avenue, Bellingham MA 2019";
+        vcard:hasEmail      "ben.doe@library.com";
+        vcard:hasTelephone  987654326 .
+
+<ex:contact_point_8>  rdf:type  vcard:Kind;
+        vcard:hasAddress    "700 Oak Street, Brockton MA 2301";
+        vcard:hasEmail      "michael.doe@library.com";
+        vcard:hasTelephone  987654327 .
+
+<ex:contact_point_9>  rdf:type  vcard:Kind;
+        vcard:hasAddress    "591 Memorial Dr, Chicopee MA 1020";
+        vcard:hasEmail      "boris.doe@library.com";
+        vcard:hasTelephone  987654328 .
+
+<ex:east_of_eden>  rdf:type   schema:Book;
+        dcterms:identifier    66;
+        dcterms:title         "East of Eden";
+        schema:Book           66;
+        schema:ISBN           "147259";
+        schema:creator        author:8457;
+        schema:datePublished  1952 .
+
+<ex:eastern_library>  rdf:type  schema:Library;
+        cdesc:hasInventory  <ex:east_of_eden>;
+        cdesc:hasInventory  <ex:hard_to_be_a_god>;
+        cdesc:hasInventory  <ex:forth_wing>;
+        ptop:hasEmployee    emp:169;
+        schema:member       member:michael;
+        schema:member       member:jane;
+        vcard:hasAddress    "East Street 321";
+        foaf:name           "Eastern Library" .
+
+<ex:forth_wing>  rdf:type      schema:Book;
+        dcterms:identifier     65;
+        dcterms:title          "Forth Wing";
+        schema:ISBN            "147258";
+        schema:creator         author:8456;
+        schema:datePublished   2022;
+        schema:inventotyLevel  1 .
+
+<ex:hard_to_be_a_god>
+        rdf:type               schema:Book;
+        dcterms:identifier     64;
+        dcterms:title          "Hard to Be a God";
+        schema:ISBN            "147257";
+        schema:creator         author:8455;
+        schema:datePublished   1964;
+        schema:inventotyLevel  10;
+        schema:inventotyLevel  11;
+        schema:inventotyLevel  12 .
+
+author:8455  rdf:type       dt:Author;
+        dcterms:identifier  8455;
+        dcat:contactPoint   <ex:contact_point_9>;
+        foaf:givenName      "Boris" .
+
+author:8456  rdf:type       dt:Author;
+        dcterms:identifier  8456;
+        dcat:contactPoint   <ex:contact_point_6>;
+        foaf:givenName      "Dwayne" .
+
+author:8457  rdf:type       dt:Author;
+        dcterms:identifier  8457;
+        dcat:contactPoint   <ex:contact_point_5>;
+        foaf:givenName      "John" .
+
+emp:165  rdf:type           nlon:Librarian;
+        dcterms:identifier  165;
+        dcat:contactPoint   <ex:contact_point_1>;
+        foaf:givenName      "Natalie" .
+
+emp:167  rdf:type           nlon:Librarian;
+        dcterms:identifier  167;
+        dcat:contactPoint   <ex:contact_point_3>;
+        foaf:givenName      "Jhon" .
+
+emp:169  rdf:type           nlon:Librarian;
+        dcterms:identifier  169;
+        dcat:contactPoint   <ex:contact_point_7>;
+        foaf:givenName      "Ben" .
+
+member:george  rdf:type     foaf:Person;
+        dcterms:identifier  514986;
+        dcat:contactPoint   <ex:contact_point_4>;
+        foaf:givenName      "George" .
+
+member:jane  rdf:type       foaf:Member;
+        rdf:type            foaf:Person;
+        dcterms:identifier  514987;
+        dcat:contactPoint   <ex:contact_point_2>;
+        foaf:givenName      "Jane" .
+
+member:michael  rdf:type    foaf:Person;
+        dcterms:identifier  514988;
+        dcat:contactPoint   <ex:contact_point_8>;
+        foaf:givenName      "Michael" .

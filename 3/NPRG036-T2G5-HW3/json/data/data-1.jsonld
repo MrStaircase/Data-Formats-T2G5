@@ -69,160 +69,160 @@
       }]
     },
     {
-      "@id": "http://example.org/library/Eastern_Library",
-      "@type": "ex:Library",
-      "name": "Eastern Library",
-      "address": "East Street 321",
-      "librarians" : [{
-        "@id" : "http://example.org/Librarian/Ben",
-        "@type" : "ex:Librarian",
-        "employee_id" : 169,
-        "name" : "Ben",
-        "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/Ben",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654326,
-          "email" : "ben.doe@library.com",
-          "delivery_address" : "250 Hartford Avenue, Bellingham MA 2019"
+      "@id": "ex:eastern_library",
+      "@type": "schema:Library",
+      "foaf:name": "Eastern Library",
+      "vcard:hasAddress": "East Street 321",
+      "ptop:hasEmployee" : [{
+        "@id" : "emp:169",
+        "@type" : "nlon:Librarian",
+        "dcterms:identifier" : 169,
+        "foaf:givenName" : "Ben",
+        "dcat:contactPoint" : {
+          "@id" : "ex:contact_point_7",
+          "@type" : "vcard:Kind",
+          "vcard:hasTelephone" : 987654326,
+          "vcard:hasEmail" : "ben.doe@library.com",
+          "vcard:hasAddress" : "250 Hartford Avenue, Bellingham MA 2019"
         }
       }],
-      "books" : [{
-        "@id" : "http://example.org/Book/East_of_Eden",
-        "@type" : "ex:Book",
-        "book_id" : 66,
-        "ISBN" : "147259",
-        "title" : "East of Eden",
-        "publish_year" : 1952,
-        "authors" : [{
-          "@id" : "http://example.org/Author/Jhon",
-          "@type" : "ex:Author",
-          "author_id" : 8457,
-          "name" : "John",
-          "contactInformation" : {
-          	"@id" : "http://example.org/contactInformation/Jhon_2",
-          	"@type" : "ex:ContactInfo",
-          	"phone_number" : 987654324,
-          	"email" : "john_2.doe@library.com",
-            "delivery_address" : "777 Brockton Avenue, Abington MA 2351"
+      "cdesc:hasInventory" : [{
+        "@id" : "ex:east_of_eden",
+        "@type" : "schema:Book",
+        "schema:Book" : 66,
+        "schema:ISBN" : "147259",
+        "dcterms:title" : "East of Eden",
+        "schema:datePublished" : 1952,
+        "schema:creator" : [{
+          "@id" : "author:8457",
+          "@type" : "dt:Author",
+          "dcterms:identifier" : 8457,
+          "foaf:givenName" : "John",
+          "dcat:contactPoint" : {
+          	"@id" : "ex:contact_point_5",
+          	"@type" : "vcard:Kind",
+          	"vcard:hasTelephone" : 987654324,
+          	"vcard:hasEmail" : "john_2.doe@library.com",
+            "vcard:hasAddress" : "777 Brockton Avenue, Abington MA 2351"
        	  }
         }]
       },{
-        "@id" : "http://example.org/Book/Hard_to_Be_a_God",
-        "@type" : "ex:Book",
-        "book_id" : 64,
-        "ISBN" : "147257",
-        "title" : "Hard to Be a God",
-        "publish_year" : 1964,
-        "copies_available" : [10, 11, 12],
-        "authors" : [{
-          "@id" : "http://example.org/Author/Boris",
-          "@type" : "ex:Author",
-          "author_id" : 8455,
-          "name" : "Boris",
-          "contactInformation" : {
-          	"@id" : "http://example.org/contactInformation/Boris",
-          	"@type" : "ex:ContactInfo",
-          	"phone_number" : 987654328,
-          	"email" : "boris.doe@library.com",
-            "delivery_address" : "591 Memorial Dr, Chicopee MA 1020"
+        "@id" : "ex:hard_to_be_a_god",
+        "@type" : "schema:Book",
+        "dcterms:identifier" : 64,
+        "schema:ISBN" : "147257",
+        "dcterms:title" : "Hard to Be a God",
+        "schema:datePublished" : 1964,
+        "schema:inventotyLevel" : [10, 11, 12],
+        "schema:creator" : [{
+          "@id" : "author:8455",
+          "@type" : "dt:Author",
+          "dcterms:identifier" : 8455,
+          "foaf:givenName" : "Boris",
+          "dcat:contactPoint" : {
+          	"@id" : "ex:contact_point_9",
+          	"@type" : "vcard:Kind",
+          	"vcard:hasTelephone" : 987654328,
+          	"vcard:hasEmail" : "boris.doe@library.com",
+            "vcard:hasAddress" : "591 Memorial Dr, Chicopee MA 1020"
        	  }
         }]
       },{
-        "@id" : "http://example.org/Book/Forth_Wing",
-        "@type" : "ex:Book",
-        "book_id" : 65,
-        "ISBN" : "147258",
-        "title" : "Forth Wing",
-        "publish_year" : 2022,
-        "copies_available" : [1],
-        "authors" : [{
-          "@id" : "http://example.org/Author/Dwayne",
-          "@type" : "ex:Author",
-          "author_id" : 8456,
-          "name" : "Dwayne",
-          "contactInformation" : {
-          	"@id" : "http://example.org/contactInformation/Dwayne",
-          	"@type" : "ex:ContactInfo",
-          	"phone_number" : 987654325,
-          	"email" : "dwayne.doe@library.com",
-            "delivery_address" : "30 Memorial Drive, Avon MA 2322"
+        "@id" : "ex:forth_wing",
+        "@type" : "schema:Book",
+        "dcterms:identifier" : 65,
+        "schema:ISBN" : "147258",
+        "dcterms:title" : "Forth Wing",
+        "schema:datePublished" : 2022,
+        "schema:inventotyLevel" : [1],
+        "schema:creator" : [{
+          "@id" : "author:8456",
+          "@type" : "dt:Author",
+          "dcterms:identifier" : 8456,
+          "foaf:givenName" : "Dwayne",
+          "dcat:contactPoint" : {
+          	"@id" : "ex:contact_point_6",
+          	"@type" : "vcard:Kind",
+          	"vcard:hasTelephone" : 987654325,
+          	"vcard:hasEmail" : "dwayne.doe@library.com",
+            "vcard:hasAddress" : "30 Memorial Drive, Avon MA 2322"
        	  }
         }]
       }],
-      "members" : [{
-        "@id" : "http://example.org/Member/Michael",
-        "@type" : "ex:Member",
-        "member_id" : 514988,
-        "name" : "Michael",
-        "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/Michael",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654327,
-          "email" : "michael.doe@library.com",
-          "delivery_address" : "700 Oak Street, Brockton MA 2301"
+      "schema:member" : [{
+        "@id" : "member:michael",
+        "@type" : "foaf:Person",
+        "dcterms:identifier" : 514988,
+        "foaf:givenName" : "Michael",
+        "dcat:contactPoint" : {
+          "@id" : "ex:contact_point_8",
+          "@type" : "vcard:Kind",
+          "vcard:hasTelephone" : 987654327,
+          "vcard:hasEmail" : "michael.doe@library.com",
+          "vcard:hasAddress" : "700 Oak Street, Brockton MA 2301"
         }
       },{
-        "@id" : "http://example.org/Member/Jane",
-        "@type" : "ex:Member",
-        "member_id" : 514987,
-        "name" : "Jane",
-        "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/Jane",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654321,
-          "email" : "jane.doe@library.com"
+        "@id" : "member:jane",
+        "@type" : "foaf:Person",
+        "dcterms:identifier" : 514987,
+        "foaf:givenName" : "Jane",
+        "dcat:contactPoint" : {
+          "@id" : "ex:contact_point_2",
+          "@type" : "vcard:Kind",
+          "vcard:hasTelephone" : 987654321,
+          "vcard:hasEmail" : "jane.doe@library.com"
         }
       }]
     },
     {
-      "@id": "http://example.org/library/City_Library",
-      "@type": "ex:Library",
-      "name": "City Library",
-      "address": "Italska 70",
-      "librarians" : [{
-        "@id" : "http://example.org/Librarian/Natalie",
-        "@type" : "ex:Librarian",
-        "employee_id" : 165,
-        "name" : "Natalie",
-        "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/Natalie",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 123456789,
-          "email" : "natalie@def.com"
+      "@id": "ex:city_library",
+      "@type": "schema:Library",
+      "foaf:name": "City Library",
+      "vcard:hasAddress": "Italska 70",
+      "ptop:hasEmployee" : [{
+        "@id" : "emp:165",
+        "@type" : "nlon:Librarian",
+        "dcterms:identifier" : 165,
+        "foaf:givenName" : "Natalie",
+        "dcat:contactPoint" : {
+          "@id" : "ex:contact_point_1",
+          "@type" : "vcard:Kind",
+          "vcard:hasTelephone" : 123456789,
+          "vcard:hasEmail" : "natalie@def.com"
         }
       }],
-      "books" : [{
-        "@id" : "http://example.org/Book/Forth_Wing",
-        "@type" : "ex:Book",
-        "book_id" : 65,
-        "ISBN" : "147258",
-        "title" : "Forth Wing",
-        "publish_year" : 2022,
-        "copies_available" : [1],
-        "authors" : [{
-          "@id" : "http://example.org/Author/Dwayne",
-          "@type" : "ex:Author",
-          "author_id" : 8456,
-          "name" : "Dwayne",
-          "contactInformation" : {
-          	"@id" : "http://example.org/contactInformation/Dwayne",
-          	"@type" : "ex:ContactInfo",
-          	"phone_number" : 987654325,
-          	"email" : "dwayne.doe@library.com",
-            "delivery_address" : "30 Memorial Drive, Avon MA 2322"
+      "cdesc:hasInventory" : [{
+        "@id" : "ex:forth_wing",
+        "@type" : "schema:Book",
+        "dcterms:identifier" : 65,
+        "schema:ISBN" : "147258",
+        "dcterms:title" : "Forth Wing",
+        "schema:datePublished" : 2022,
+        "schema:inventotyLevel" : [1],
+        "schema:creator" : [{
+          "@id" : "author:8456",
+          "@type" : "dt:Author",
+          "dcterms:identifier" : 8456,
+          "foaf:givenName" : "Dwayne",
+          "dcat:contactPoint" : {
+          	"@id" : "ex:contact_point_6",
+          	"@type" : "vcard:Kind",
+          	"vcard:hasTelephone" : 987654325,
+          	"vcard:hasEmail" : "dwayne.doe@library.com",
+            "vcard:hasAddress" : "30 Memorial Drive, Avon MA 2322"
        	  }
         }]
       }],
-      "members" : [{
-        "@id" : "http://example.org/Member/George",
-        "@type" : "ex:Member",
-        "member_id" : 514986,
-        "name" : "George",
-        "contactInformation" : {
-          "@id" : "http://example.org/contactInformation/George",
-          "@type" : "ex:ContactInfo",
-          "phone_number" : 987654323,
-          "email" : "george.doe@library.com"
+      "schema:member" : [{
+        "@id" : "member:george",
+        "@type" : "foaf:Person",
+        "dcterms:identifier" : 514986,
+        "foaf:givenName" : "George",
+        "dcat:contactPoint" : {
+          "@id" : "ex:contact_point_4",
+          "@type" : "vcard:Kind",
+          "vcard:hasTelephone" : 987654323,
+          "vcard:hasEmail" : "george.doe@library.com"
         }
       }]
     }

@@ -1,0 +1,2 @@
+(: Retrieve the email addresses of all librarians working in libraries where the book "Forth Wing" is available :)
+//Library[Books/Book[Title="Forth Wing"]]/Librarians/Librarian/ContactInformation/Email

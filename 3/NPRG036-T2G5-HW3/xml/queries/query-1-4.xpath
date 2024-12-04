@@ -1,0 +1,2 @@
+(: Retrieve the names of authors who have written books available in multiple libraries :)
+//Author[BookID=//Library/Books/Book/BookID and count(//Library/Books/Book[BookID=current()/BookID]) > 1]/Name

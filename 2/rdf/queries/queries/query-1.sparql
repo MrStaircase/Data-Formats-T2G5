@@ -1,4 +1,4 @@
-#Lists all librarians who have access to the contact points of the authers of the book of the library they work in
+#Lists all librarians who have access to the contact points of the authors of the book of the library they work in
 
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX nlon: <http://example.org/nlon#>

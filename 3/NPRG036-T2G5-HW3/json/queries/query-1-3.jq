@@ -1,8 +1,8 @@
 jq  '[
     ."@graph"[] 
         | {
-            Library_Name: ."foaf:name", 
+            Member: ."schema:member"[]."foaf:givenName",
             Book: ."cdesc:hasInventory"[]."dcterms:title", 
-            Member: ."schema:member"[]."foaf:givenName"
+            Library_Name: ."foaf:name"
         }
 ]'

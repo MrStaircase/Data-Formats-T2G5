@@ -1,0 +1,2 @@
+(: Find the names of libraries that have more than one member :)
+//Library[count(Members/Member) > 1]/Name

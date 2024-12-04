@@ -1,0 +1,2 @@
+(: List the titles of books published before the year 2000 along with their respective library names :)
+//Library[Books/Book[PublishYear < 2000]]/(Name | Books/Book[PublishYear < 2000]/Title)

@@ -66,7 +66,7 @@ ex:forth_wing a schema:Book;
               dcterms:title "Forth Wing"@en;
               schema:datePublished 2022;
               schema:creator author:8456;
-              schema:inventotyLevel 1.
+              schema:offers 1.
 
 ex:hard_to_be_a_god a schema:Book;
               dcterms:identifier 64;
@@ -74,7 +74,7 @@ ex:hard_to_be_a_god a schema:Book;
               dcterms:title "Hard to Be a God"@en;
               schema:datePublished 1964;
               schema:creator author:8455;
-              schema:inventotyLevel 10, 11, 12.
+              schema:offers 10, 11, 12.
 
 member:michael a foaf:Person;
             dcterms:identifier 514988;
@@ -146,37 +146,3 @@ ex:contact_point_9 a vcard:Kind;
                    vcard:hasTelephone <tel:+987654328>;
                    vcard:hasEmail <mailto:boris.doe@library.com>;
                    vcard:hasAddress "591 Memorial Dr, Chicopee MA 1020".
-
-# schema:Library a rdfs:Class;
-#               rdfs:label "Library"@en;
-#               rdfs:comment "A library"@en.
-# nlon:Librarian a rdfs:Class;
-#               rdfs:label "Librarian"@en;
-#               rdfs:comment "A librarian"@en.
-# schema:Book a rdfs:Class;
-#               rdfs:label "Book"@en;
-#               rdfs:comment "A book"@en.
-# foaf:Person a rdfs:Class;
-#               rdfs:label "Person"@en;
-#               rdfs:comment "A person"@en.
-# dt:Author a rdfs:Class;
-#               rdfs:label "Author"@en;
-#               rdfs:comment "An author"@en.
-# vcard:Kind a rdfs:Class;
-#               rdfs:label "Contact Information"@en;
-#               rdfs:comment "A contact information"@en.
-
-# foaf:name a rdf:Property.
-# vcard:hasAddress a rdf:Property.
-# ptop:hasEmloyee a rdf:Property.
-# cdesc:hasInventory a rdf:Property.
-# schema:member a rdf:Property.
-# dcterms:identifier a rdf:Property.
-# foaf:givenName a rdf:Property.
-# dcat:contactPoint a rdf:Property.
-# schema:ISBN a rdf:Property.
-# dcterms:title a rdf:Property.
-# schema:datePublished a rdf:Property.
-# schema:creator a rdf:Property.
-# vcard:hasTelephone a rdf:Property.
-# vcard:hasAddress a rdf:Property.

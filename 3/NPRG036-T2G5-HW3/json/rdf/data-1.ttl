@@ -93,7 +93,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         schema:ISBN            "147258";
         schema:creator         author:8456;
         schema:datePublished   2022;
-        schema:inventotyLevel  1 .
+        schema:offers          1 .
 
 <ex:hard_to_be_a_god>
         rdf:type               schema:Book;
@@ -102,9 +102,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         schema:ISBN            "147257";
         schema:creator         author:8455;
         schema:datePublished   1964;
-        schema:inventotyLevel  10;
-        schema:inventotyLevel  11;
-        schema:inventotyLevel  12 .
+        schema:offers          10;
+        schema:offers          11;
+        schema:offers          12 .
 
 author:8455  rdf:type       dt:Author;
         dcterms:identifier  8455;

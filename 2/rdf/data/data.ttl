@@ -1,4 +1,4 @@
-@prefix ex: <http://example.org/library> .
+@prefix ex: <http://example.org/library#> .
 @prefix schema: <http://schema.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .

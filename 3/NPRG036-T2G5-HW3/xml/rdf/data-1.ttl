@@ -1,0 +1,160 @@
+@prefix ex: <http://example.org/library#> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ptop: <http://example.org/ptop#> .
+@prefix cdesc: <http://example.org/cdesc#> .
+@prefix emp: <http://example.org/emp#> .
+@prefix nlon: <http://example.org/nlon#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix member: <http://example.org/member#> .
+@prefix author: <http://example.org/author#> .
+@prefix dt: <http://example.org/dt#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:City_Library a schema:Library;
+                foaf:name "City Library"@en;
+                vcard:hasAddress "Italska 70"@en;
+                ptop:hasEmployee emp:165;
+                cdesc:hasInventory ex:Forth_Wing;
+                schema:member member:514986;
+.
+ex:Central_Library a schema:Library;
+                foaf:name "Central Library"@en;
+                vcard:hasAddress "Main Street 123"@en;
+                ptop:hasEmployee emp:167;
+                cdesc:hasInventory ex:East_of_Eden;
+                schema:member member:514987;
+.
+ex:Eastern_Library a schema:Library;
+                foaf:name "Eastern Library"@en;
+                vcard:hasAddress "East Street 321"@en;
+                ptop:hasEmployee emp:169;
+                cdesc:hasInventory ex:Hard_to_Be_a_God;
+                cdesc:hasInventory ex:East_of_Eden;
+                cdesc:hasInventory ex:Forth_Wing;
+                schema:member member:514988;
+.
+
+emp:165 a nlon:Librarian;
+        dcterms:identifier 165;
+        foaf:givenName "Natalie"@en;
+        dcat:contactPoint ex:contact_point_165.
+
+emp:167 a nlon:Librarian;
+        dcterms:identifier 167;
+        foaf:givenName "John"@en;
+        dcat:contactPoint ex:contact_point_167.
+
+emp:169 a nlon:Librarian;
+        dcterms:identifier 169;
+        foaf:givenName "Ben"@en;
+        dcat:contactPoint ex:contact_point_169.
+
+ex:Forth_Wing a schema:Book;
+               dcterms:identifier 65;
+               schema:ISBN 147258;
+               dcterms:title "Forth Wing"@en;
+               schema:datePublished 2022;
+               schema:creator author:8456;
+               schema:offers 1;
+.
+
+ex:East_of_Eden a schema:Book;
+               dcterms:identifier 66;
+               schema:ISBN 147259;
+               dcterms:title "East of Eden"@en;
+               schema:datePublished 1952;
+               schema:creator author:8457;
+.
+
+ex:Hard_to_Be_a_God a schema:Book;
+               dcterms:identifier 64;
+               schema:ISBN 147257;
+               dcterms:title "Hard to Be a God"@en;
+               schema:datePublished 1964;
+               schema:creator author:8455;
+               schema:offers 10, 11, 12;
+.
+
+member:514986 a foaf:Person;
+            dcterms:identifier 514986;
+            foaf:givenName "George"@en;
+            dcat:contactPoint ex:contact_point_514986.
+
+member:514987 a foaf:Person;
+            dcterms:identifier 514987;
+            foaf:givenName "Jane"@en;
+            dcat:contactPoint ex:contact_point_514987.
+
+member:514988 a foaf:Person;
+            dcterms:identifier 514988;
+            foaf:givenName "Michael"@en;
+            dcat:contactPoint ex:contact_point_514988.
+
+author:8456 a dt:Author;
+            dcterms:identifier 8456;
+            foaf:givenName "Dwayne"@en;
+            dcat:contactPoint ex:contact_point_8456.
+
+author:8457 a dt:Author;
+            dcterms:identifier 8457;
+            foaf:givenName "John"@en;
+            dcat:contactPoint ex:contact_point_8457.
+
+author:8455 a dt:Author;
+            dcterms:identifier 8455;
+            foaf:givenName "Boris"@ru;
+            dcat:contactPoint ex:contact_point_8455.
+
+ex:contact_point_8456 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654325>;
+                   vcard:hasEmail <mailto:dwayne.doe@library.com>;
+                   vcard:hasAddress "30 Memorial Drive, Avon MA 2322".
+.
+
+ex:contact_point_165 a vcard:Kind;
+                   vcard:hasTelephone <tel:+123456789>;
+                   vcard:hasEmail <mailto:natalie@def.com>;
+.
+
+ex:contact_point_514986 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654323>;
+                   vcard:hasEmail <mailto:george.doe@library.com>;
+.
+
+ex:contact_point_8457 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654324>;
+                   vcard:hasEmail <mailto:john_2.doe@library.com>;
+                   vcard:hasAddress "777 Brockton Avenue, Abington MA 2351".
+.
+
+ex:contact_point_167 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654322>;
+                   vcard:hasEmail <mailto:john.doe@library.com>;
+.
+
+ex:contact_point_514987 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654321>;
+                   vcard:hasEmail <mailto:jane.doe@library.com>;
+.
+
+ex:contact_point_8455 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654328>;
+                   vcard:hasEmail <mailto:boris.doe@library.com>;
+                   vcard:hasAddress "591 Memorial Dr, Chicopee MA 1020".
+.
+
+ex:contact_point_169 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654326>;
+                   vcard:hasEmail <mailto:ben.doe@library.com>;
+                   vcard:hasAddress "250 Hartford Avenue, Bellingham MA 2019".
+.
+
+ex:contact_point_514988 a vcard:Kind;
+                   vcard:hasTelephone <tel:+987654327>;
+                   vcard:hasEmail <mailto:michael.doe@library.com>;
+                   vcard:hasAddress "700 Oak Street, Brockton MA 2301".
+.

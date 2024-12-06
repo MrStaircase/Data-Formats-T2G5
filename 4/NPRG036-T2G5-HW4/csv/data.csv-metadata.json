@@ -1,0 +1,321 @@
+{
+  "tables": [
+    {
+      "table_name": "Library",
+      "columns": [
+        {
+          "column_name": "libraryID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for each library"
+        },
+        {
+          "column_name": "name",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Name of the library"
+        },
+        {
+          "column_name": "address",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Address of the library"
+        }
+      ]
+    },
+    {
+      "table_name": "Member",
+      "columns": [
+        {
+          "column_name": "memberID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for each member"
+        },
+        {
+          "column_name": "name",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Name of the member"
+        },
+        {
+          "column_name": "phoneNumber",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References ContactInformation.phoneNumber"
+        }
+      ]
+    },
+    {
+      "table_name": "Librarian",
+      "columns": [
+        {
+          "column_name": "employeeID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for each librarian"
+        },
+        {
+          "column_name": "name",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Name of the librarian"
+        },
+        {
+          "column_name": "libraryID",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References Library.libraryID"
+        },
+        {
+          "column_name": "phoneNumber",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References ContactInformation.phoneNumber"
+        }
+      ]
+    },
+    {
+      "table_name": "Book",
+      "columns": [
+        {
+          "column_name": "bookID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for each book"
+        },
+        {
+          "column_name": "ISBN",
+          "data_type": "Integer",
+          "key_type": "None",
+          "description": "ISBN of the book"
+        },
+        {
+          "column_name": "title",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Title of the book"
+        },
+        {
+          "column_name": "publishYear",
+          "data_type": "Integer",
+          "key_type": "None",
+          "description": "Publish year of the book"
+        },
+        {
+          "column_name": "libraryID",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References Library.libraryID"
+        }
+      ]
+    },
+    {
+      "table_name": "Copies",
+      "columns": [
+        {
+          "column_name": "bookCopyID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for each copy of a book"
+        },
+        {
+          "column_name": "bookID",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References Library.libraryID"
+        },
+        {
+          "column_name": "copyID",
+          "data_type": "Integer",
+          "key_type": "None",
+          "description": "Identifier for each copy"
+        }
+      ]
+    },
+    {
+      "table_name": "HasMember",
+      "columns": [
+        {
+          "column_name": "libraryID",
+          "data_type": "Integer",
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the HasMember (part of primary key)"
+        },
+        {
+          "column_name": "memberID",
+          "data_type": "Integer",
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the HasMember (part of primary key)"
+        }
+      ]
+    },
+    {
+      "table_name": "Author",
+      "columns": [
+        {
+          "column_name": "authorID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for the author"
+        },
+        {
+          "column_name": "name",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Name of the author"
+        }
+      ]
+    },
+    {
+      "table_name": "ContactInformation",
+      "columns": [
+        {
+          "column_name": "phoneNumber",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for the contact information"
+        },
+        {
+          "column_name": "email",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "Email of the contact information"
+        }
+      ]
+    },
+    {
+      "table_name": "DeliveryAddress",
+      "columns": [
+        {
+          "column_name": "phoneNumber",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for the DeliveryAddress"
+        },
+        {
+          "column_name": "address",
+          "data_type": "Text",
+          "key_type": "None",
+          "description": "address of the contact information"
+        }
+      ]
+    },
+    {
+      "table_name": "HasAuthor",
+      "columns": [
+        {
+          "column_name": "authorID",
+          "data_type": "Integer",
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the HasAuthor (part of primary key)"
+        },
+        {
+          "column_name": "bookID",
+          "data_type": "Integer",
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the HasAuthor (part of primary key)"
+        }
+      ]
+    },
+    {
+      "table_name": "AuthorContact",
+      "columns": [
+        {
+          "column_name": "authorID",
+          "data_type": "Integer",
+          "key_type": "Primary Key",
+          "description": "Unique identifier for the author contact information"
+        },
+        {
+          "column_name": "phoneNumber",
+          "data_type": "Integer",
+          "key_type": "Foreign Key",
+          "description": "References ContactInformation.phoneNumber"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from_table": "Librarian",
+      "from_column": "libraryID",
+      "to_table": "Library",
+      "to_column": "libraryID",
+      "type": "foreign_key",
+      "constraint": "libraryID ⊆ Library.libraryID"
+    },
+    {
+      "from_table": "Book",
+      "from_column": "libraryID",
+      "to_table": "Library",
+      "to_column": "libraryID",
+      "type": "foreign_key",
+      "constraint": "libraryID ⊆ Library.libraryID"
+    },
+    {
+      "from_table": "HasMember",
+      "from_column": "libraryID",
+      "to_table": "Library",
+      "to_column": "libraryID",
+      "type": "foreign_key",
+      "constraint": "libraryID ⊆ Library.libraryID"
+    },
+    {
+      "from_table": "HasMember",
+      "from_column": "memberID",
+      "to_table": "Member",
+      "to_column": "memberID",
+      "type": "foreign_key",
+      "constraint": "memberID ⊆ Member.memberID"
+    },
+    {
+      "from_table": "Copies",
+      "from_column": "bookID",
+      "to_table": "Book",
+      "to_column": "bookID",
+      "type": "foreign_key",
+      "constraint": "bookID ⊆ Book.bookID"
+    },
+    {
+      "from_table": "DeliveryAddress",
+      "from_column": "phoneNumber",
+      "to_table": "ContactInformation",
+      "to_column": "phoneNumber",
+      "type": "foreign_key",
+      "constraint": "phoneNumber ⊆ ContactInformation.phoneNumber"
+    },
+    {
+      "from_table": "HasAuthor",
+      "from_column": "authorID",
+      "to_table": "Author",
+      "to_column": "authorID",
+      "type": "foreign_key",
+      "constraint": "authorID ⊆ Author.authorID"
+    },
+    {
+      "from_table": "HasAuthor",
+      "from_column": "bookID",
+      "to_table": "Book",
+      "to_column": "bookID",
+      "type": "foreign_key",
+      "constraint": "bookID ⊆ Book.bookID"
+    },
+    {
+      "from_table": "AuthorContact",
+      "from_column": "phoneNumber",
+      "to_table": "ContactInformation",
+      "to_column": "phoneNumber",
+      "type": "foreign_key",
+      "constraint": "phoneNumber ⊆ ContactInformation.phoneNumber"
+    },
+    {
+      "from_table": "AuthorContact",
+      "from_column": "authorID",
+      "to_table": "Author",
+      "to_column": "authorID",
+      "type": "foreign_key",
+      "constraint": "authorID ⊆ Author.authorID"
+    }
+  ]
+}

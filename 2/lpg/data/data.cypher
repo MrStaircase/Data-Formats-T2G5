@@ -64,28 +64,28 @@ CREATE (library3)-[:HOLDS]->(book2);
 MATCH (library3:Library {name: "Eastern Library"}), (book3:Book {title: "East of Eden"})
 CREATE (library3)-[:HOLDS]->(book3);
 
-// Connecting Libraries to Members (HAS_MEMBER)
+// Connecting Libraries to Members (HAS_MEMBER {since date "YYYY-MM-DD"})
 MATCH (library1:Library {name: "City Library"}), (member1:Member {name: "George"})
-CREATE (library1)-[:HAS_MEMBER]->(member1);
+CREATE (library1)-[:HAS_MEMBER {since: "2017-5-17"}]->(member1);
 
 MATCH (library2:Library {name: "Central Library"}), (member2:Member {name: "Jane"})
-CREATE (library2)-[:HAS_MEMBER]->(member2);
+CREATE (library2)-[:HAS_MEMBER {since: "2024-1-1"}]->(member2);
 
 MATCH (library3:Library {name: "Eastern Library"}), (member2:Member {name: "Jane"})
-CREATE (library3)-[:HAS_MEMBER]->(member2);
+CREATE (library3)-[:HAS_MEMBER {since: "2018-6-7"}]->(member2);
 
 MATCH (library3:Library {name: "Eastern Library"}), (member3:Member {name: "Michael"})
-CREATE (library3)-[:HAS_MEMBER]->(member3);
+CREATE (library3)-[:HAS_MEMBER {since: "2020-12-24"}]->(member3);
 
-// Connecting Books to Authors (WRITTEN_BY)
+// Connecting Books to Authors (WRITTEN_BY {writing period in months})
 MATCH (book1:Book {title: "Hard to Be a God"}), (author1:Author {name: "Boris"})
-CREATE (book1)-[:WRITTEN_BY]->(author1);
+CREATE (book1)-[:WRITTEN_BY {writing_period: 13}]->(author1);
 
 MATCH (book2:Book {title: "Forth Wing"}), (author2:Author {name: "Dwayne"})
-CREATE (book2)-[:WRITTEN_BY]->(author2);
+CREATE (book2)-[:WRITTEN_BY {writing_period: 97}]->(author2);
 
 MATCH (book3:Book {title: "East of Eden"}), (author3:Author {name: "John"})
-CREATE (book3)-[:WRITTEN_BY]->(author3);
+CREATE (book3)-[:WRITTEN_BY {writing_period: 25}]->(author3);
 
 // Connecting Libranians, Authors and Members to Contact Information (HAS_CONTACT_INFORMATION)
 

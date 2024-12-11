@@ -1,27 +1,23 @@
 {
+  "@context": "http://www.w3.org/ns/csvw",
+  {
+   "@language": "en",
+   "@base": "https://example.org/"
+  }
+  "@type": "TableGroup",
+  "@id": "https://example.org/tableGroups/",
   "tables": [
     {
-      "table_name": "Library",
-      "columns": [
-        {
-          "column_name": "libraryID",
-          "data_type": "Integer",
-          "key_type": "Primary Key",
-          "description": "Unique identifier for each library"
-        },
-        {
-          "column_name": "name",
-          "data_type": "Text",
-          "key_type": "None",
-          "description": "Name of the library"
-        },
-        {
-          "column_name": "address",
-          "data_type": "Text",
-          "key_type": "None",
-          "description": "Address of the library"
-        }
-      ]
+      "@type": "Table",
+      "@id": "https://example.org/data-1",
+      "url": "https://example.org/data-1.csv",
+      "dc:titles": "Library",
+      "tableSchema": {
+        "columns": [
+          {"name": "libraryID", "titles": "libraryID", "datatype": "number", "required": true},
+          {"titles": "name", "datatype": "string", "required": true},
+          {"titles": "address", "datatype": "string", "required": true}],
+        "primaryKey": "libraryID"}
     },
     {
       "table_name": "Member",
@@ -47,33 +43,53 @@
       ]
     },
     {
-      "table_name": "Librarian",
-      "columns": [
-        {
-          "column_name": "employeeID",
-          "data_type": "Integer",
-          "key_type": "Primary Key",
-          "description": "Unique identifier for each librarian"
-        },
-        {
-          "column_name": "name",
-          "data_type": "Text",
-          "key_type": "None",
-          "description": "Name of the librarian"
-        },
-        {
-          "column_name": "libraryID",
-          "data_type": "Integer",
-          "key_type": "Foreign Key",
-          "description": "References Library.libraryID"
-        },
-        {
-          "column_name": "phoneNumber",
-          "data_type": "Integer",
-          "key_type": "Foreign Key",
-          "description": "References ContactInformation.phoneNumber"
-        }
-      ]
+      "@type": "Table",
+      "@id": "https://example.org/data-3",
+      "url": "https://example.org/data-3.csv",
+      "dc:titles": "Librarian",
+      "tableSchema": {
+        "columns": [
+          {"@type":"column", "name": "employeeID", "titles": "employeeID", "datatype": "number", "required": true, "aboutUrl": "{+employeeID}", "propertyUrl": "rdf:type", "valueUrl": "nlon:librarian"},
+          {"@type":"column", "name": "name", "titles": "name", "datatype": "string", "required": true},
+          {"@type":"column", "name": "libraryID", "titles": "libraryID", "datatype": "number", "required": true},
+          {"@type":"column", "aboutUrl": "{+employeeID}", "propertyUrl": "foaf:givenName", "valueUrl": "{+name}", "virtual": true},
+          {"@type":"column", "aboutUrl": "ex:{libraryID}", "propertyUrl": "ptop:hasEmployee", "valueUrl": "emp:{employeeID}", "virtual": true}],
+        "primaryKey": "employeeID",
+        "foreignKeys": [{
+            "columbReference": "libraryID",
+            "reference": {
+              "resource": "https://example.org/data-1.csv",
+              "columbReference": "libraryID"
+            }
+        }]
+      },
+                    "table_name": "Librarian",
+                    "columns": [
+                      {
+                        "column_name": "employeeID",
+                        "data_type": "Integer",
+                        "key_type": "Primary Key",
+                        "description": "Unique identifier for each librarian"
+                      },
+                      {
+                        "column_name": "name",
+                        "data_type": "Text",
+                        "key_type": "None",
+                        "description": "Name of the librarian"
+                      },
+                      {
+                        "column_name": "libraryID",
+                        "data_type": "Integer",
+                        "key_type": "Foreign Key",
+                        "description": "References Library.libraryID"
+                      },
+                      {
+                        "column_name": "phoneNumber",
+                        "data_type": "Integer",
+                        "key_type": "Foreign Key",
+                        "description": "References ContactInformation.phoneNumber"
+                      }
+                    ]
     },
     {
       "table_name": "Book",

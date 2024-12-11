@@ -81,8 +81,14 @@
         {
           "column_name": "bookID",
           "data_type": "Integer",
-          "key_type": "Primary Key",
-          "description": "Unique identifier for each book"
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the Book (part of primary key)"
+        },
+        {
+          "column_name": "libraryID",
+          "data_type": "Integer",
+          "key_type": "Composite Primary Key",
+          "description": "Unique identifier for the Book (part of primary key)"
         },
         {
           "column_name": "ISBN",
@@ -101,12 +107,6 @@
           "data_type": "Integer",
           "key_type": "None",
           "description": "Publish year of the book"
-        },
-        {
-          "column_name": "libraryID",
-          "data_type": "Integer",
-          "key_type": "Foreign Key",
-          "description": "References Library.libraryID"
         }
       ]
     },
